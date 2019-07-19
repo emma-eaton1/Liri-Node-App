@@ -21,6 +21,34 @@ var concertThis = function(){
                 console.log("Event Date");
 }
 
+var movieThis = function(){
+if (data === ''){
+    request("http://www.omdbapi.com/?t=mr-nobody&y=&plot=short&tomatoes=true&apikey=trilogy", function(error, response, body) {
+        console.log("Movie Title "+JSON.parse(body).Title);
+        console.log("Release Year "+JSON.parse(body).Year);
+        console.log("IMDB Rating " + JSON.parse(body).imdbRating);
+        console.log("Rotten Tomatoes Rating " + JSON.parse(body).tomatoRating);
+        console.log("Country of production " + JSON.parse(body).Country);
+        console.log("Primary language " + JSON.parse(body).Language);
+        console.log("Movie plot " + JSON.parse(body).Plot);
+        console.log("Actors " + JSON.parse(body).Actors);
+    });   
+}
+request("http://www.omdbapi.com/?t="+data+"&y=&plot=short&tomatoes=true&apikey=trilogy", function(error, response, body) {
+if (!error && response.statusCode === 200) {
+    console.log("Movie Title "+JSON.parse(body).Title);
+    console.log("Release Year "+JSON.parse(body).Year);
+    console.log("IMDB Rating " + JSON.parse(body).imdbRating);
+    console.log("Rotten Tomatoes Rating " + JSON.parse(body).tomatoRating);
+    console.log("Country of production " + JSON.parse(body).Country);
+    console.log("Primary language " + JSON.parse(body).Language);
+    console.log("Movie plot " + JSON.parse(body).Plot);
+    console.log("Actors " + JSON.parse(body).Actors);
+    found = true;
+    }
+});
+};
+
 var spotifyThisSong = function() {
     let spotify = new Spotify(keys.spotify);
     if (!data) {
@@ -31,10 +59,10 @@ var spotifyThisSong = function() {
             console.log('Error occurred: ' + error);
             return;
         } else {
-                console.log("The artist name is " + data.tracks.items[0].artists[0].name);
-                console.log("The songs name is " + data.tracks.items[0].name); 
-                console.log("A preview link of the song from Spotify " + data.tracks.items[0].preview_url);
-                console.log("This song is from the album " + data.tracks.items[0].album.name);
+                console.log("Artist name " + data.tracks.items[0].artists[0].name);
+                console.log("Song Name " + data.tracks.items[0].name); 
+                console.log("Preview Link " + data.tracks.items[0].preview_url);
+                console.log("Album Name " + data.tracks.items[0].album.name);
                 console.log(" ")
                 found = true;
             }
@@ -43,34 +71,6 @@ var spotifyThisSong = function() {
         console.log("data array is "+dataArray)
         logToFile();
 }
-
-var movieThis = function(){
-if (data === ''){
-    request("http://www.omdbapi.com/?t=mr-nobody&y=&plot=short&tomatoes=true&apikey=trilogy", function(error, response, body) {
-        console.log("Title of the movie "+JSON.parse(body).Title);
-        console.log("Year the movie came out "+JSON.parse(body).Year);
-        console.log("IMDB Rating of the movie " + JSON.parse(body).imdbRating);
-        console.log("Rotten Tomatoes Rating of the movie " + JSON.parse(body).tomatoRating);
-        console.log("Country where the movie was produced " + JSON.parse(body).Country);
-        console.log("Language of the movie " + JSON.parse(body).Language);
-        console.log("Plot of the movie " + JSON.parse(body).Plot);
-        console.log("Actors in the movie " + JSON.parse(body).Actors);
-    });   
-}
-request("http://www.omdbapi.com/?t="+data+"&y=&plot=short&tomatoes=true&apikey=trilogy", function(error, response, body) {
-if (!error && response.statusCode === 200) {
-    console.log("Title of the movie "+JSON.parse(body).Title);
-    console.log("Year the movie came out "+JSON.parse(body).Year);
-    console.log("IMDB Rating of the movie " + JSON.parse(body).imdbRating);
-    console.log("Rotten Tomatoes Rating of the movie " + JSON.parse(body).tomatoRating);
-    console.log("Country where the movie was produced " + JSON.parse(body).Country);
-    console.log("Language of the movie " + JSON.parse(body).Language);
-    console.log("Plot of the movie " + JSON.parse(body).Plot);
-    console.log("Actors in the movie " + JSON.parse(body).Actors);
-    found = true;
-    }
-});
-};
 
 var logToFile = function(){
     fs.appendFile("log.txt", (dataArray+", "), function(err) {
@@ -103,12 +103,12 @@ var askLiri = function(){
         },
         {
         type: "input",
-        message: "What do you want to search for?",
+        message: "What would you like to search for?",
         name: "userData"
         },
         {
         type: "confirm",
-        message: "Are you sure?",
+        message: "Confirm selection",
         name: "confirm",
         default: true
         }
