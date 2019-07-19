@@ -108,7 +108,7 @@ var askLiri = function(){
         },
         {
         type: "confirm",
-        message: "Are you sure:",
+        message: "Are you sure?",
         name: "confirm",
         default: true
         }
@@ -130,28 +130,20 @@ var askLiri = function(){
         switch (cmd) {
             case "concert-this":
             console.log("Calling the concert-this function to search for "+data)
-            concertThis();
-                
+            concertThis();   
             break;
             case 'spotify-this-song':
             console.log("you want spotify info on the song "+data)
             spotifyThisSong();    
-            
             break;
-
             case 'movie-this':
             console.log("Details for the movie ",data)
             movieThis();
-        
             break;
-
             case "do-what-it-says":
             doWhatItSays();
-
             break;
-        
             default:
-            
             break;
         }
     };

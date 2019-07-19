@@ -7,5 +7,8 @@
 *spotify-this-song* will search using the Spotify API for arist(s), song name, and a preview link of the song from spotify.\
 *movie-this* will search for a movie using the OMDB to find the movie title, year of release, IMDB rating, Rotten Tomatoes Rating of the movie, country of production, language, and plot as well as actors of the movie.\
 *do-what-it-says* will use the text from random.txt to call one of LIRI's other commands.  
-  
-> Contributed by Emma Eaton for Week 10 Homework
+![Alt Text](https://raw.github.com/{emma-eaton1}/{Liri-Node-App}/{master}/{./images/start.png})
+![Alt Text](https://raw.github.com/{emma-eaton1}/{Liri-Node-App}/{master}/{./images/spot.png})
+![Alt Text](https://raw.github.com/{emma-eaton1}/{Liri-Node-App}/{master}/{./images/movie.png})
+![Alt Text](https://raw.github.com/{emma-eaton1}/{Liri-Node-App}/{master}/{./images/random.png})
+> Uploaded by Emma Eaton, for Week 10 Homework
