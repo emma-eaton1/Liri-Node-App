@@ -16,7 +16,7 @@ console.log(data)
 // Concert this function
 
 var concertThis = function(){
-request("https://rest.bandsintown.com/artists/"+data+"/events?app_id=codingbootcamp", function(error, response, body) {
+request("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp", function(error, response, body) {
 
     // If the request is successful (i.e. if the response status code is 200)
     if (!error && response.statusCode === 200) {
