@@ -15,39 +15,10 @@ console.log(data)
 
 var concertThis = function(){
 //request("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp", function() {
-                console.log("Name of venue")
-                console.log("Venue location")
-                moment(date);
-                console.log("Event Date");
+                //console.log("Name of venue")
+                //console.log("Venue location")
+                //moment(date Event Date MM/DD/YYYY);
 }
-
-var movieThis = function(){
-if (data === ''){
-    request("http://www.omdbapi.com/?t=mr-nobody&y=&plot=short&tomatoes=true&apikey=trilogy", function(error, response, body) {
-        console.log("Movie Title "+JSON.parse(body).Title);
-        console.log("Release Year "+JSON.parse(body).Year);
-        console.log("IMDB Rating " + JSON.parse(body).imdbRating);
-        console.log("Rotten Tomatoes Rating " + JSON.parse(body).tomatoRating);
-        console.log("Country of production " + JSON.parse(body).Country);
-        console.log("Primary language " + JSON.parse(body).Language);
-        console.log("Movie plot " + JSON.parse(body).Plot);
-        console.log("Actors " + JSON.parse(body).Actors);
-    });   
-}
-request("http://www.omdbapi.com/?t="+data+"&y=&plot=short&tomatoes=true&apikey=trilogy", function(error, response, body) {
-if (!error && response.statusCode === 200) {
-    console.log("Movie Title "+JSON.parse(body).Title);
-    console.log("Release Year "+JSON.parse(body).Year);
-    console.log("IMDB Rating " + JSON.parse(body).imdbRating);
-    console.log("Rotten Tomatoes Rating " + JSON.parse(body).tomatoRating);
-    console.log("Country of production " + JSON.parse(body).Country);
-    console.log("Primary language " + JSON.parse(body).Language);
-    console.log("Movie plot " + JSON.parse(body).Plot);
-    console.log("Actors " + JSON.parse(body).Actors);
-    found = true;
-    }
-});
-};
 
 var spotifyThisSong = function() {
     let spotify = new Spotify(keys.spotify);
@@ -77,6 +48,34 @@ var logToFile = function(){
         if (err) {
         console.log(err);
         }
+});
+};
+
+var movieThis = function(){
+if (data === ''){
+    request("http://www.omdbapi.com/?t=mr-nobody&y=&plot=short&tomatoes=true&apikey=trilogy", function(error, response, body) {
+        console.log("Movie Title "+JSON.parse(body).Title);
+        console.log("Release Year "+JSON.parse(body).Year);
+        console.log("IMDB Rating " + JSON.parse(body).imdbRating);
+        console.log("Rotten Tomatoes Rating " + JSON.parse(body).tomatoRating);
+        console.log("Country of production " + JSON.parse(body).Country);
+        console.log("Primary language " + JSON.parse(body).Language);
+        console.log("Movie plot " + JSON.parse(body).Plot);
+        console.log("Actors " + JSON.parse(body).Actors);
+    });   
+}
+request("http://www.omdbapi.com/?t="+data+"&y=&plot=short&tomatoes=true&apikey=trilogy", function(error, response, body) {
+if (!error && response.statusCode === 200) {
+    console.log("Movie Title "+JSON.parse(body).Title);
+    console.log("Release Year "+JSON.parse(body).Year);
+    console.log("IMDB Rating " + JSON.parse(body).imdbRating);
+    console.log("Rotten Tomatoes Rating " + JSON.parse(body).tomatoRating);
+    console.log("Country of production " + JSON.parse(body).Country);
+    console.log("Primary language " + JSON.parse(body).Language);
+    console.log("Movie plot " + JSON.parse(body).Plot);
+    console.log("Actors " + JSON.parse(body).Actors);
+    found = true;
+    }
 });
 };
 
