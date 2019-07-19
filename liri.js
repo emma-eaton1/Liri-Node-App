@@ -17,7 +17,7 @@ var concertThis = function(){
 //request("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp", function() {
                 console.log("Name of venue")
                 console.log("Venue location")
-                moment(date, "MM-DD-YYYY");
+                moment(date);
                 console.log("Event Date");
 }
 
