@@ -68,7 +68,7 @@ var spotifyThisSong = function() {
             }
         });
         dataArray = [cmd + " " + data]
-        console.log("data array is "+dataArray)
+        console.log("You looked up information for "+dataArray)
         logToFile();
 }
 
