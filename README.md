@@ -6,9 +6,11 @@
 *concert-this* will search using the Bands in Town Artists Event API to reach for venue name, location and event date.\
 *spotify-this-song* will search using the Spotify API for arist(s), song name, and a preview link of the song from spotify.\
 *movie-this* will search for a movie using the OMDB to find the movie title, year of release, IMDB rating, Rotten Tomatoes Rating of the movie, country of production, language, and plot as well as actors of the movie.\
-*do-what-it-says* will use the text from random.txt to call one of LIRI's other commands.  
-![Loaded App](https://raw.github.com/{emma-eaton1}/{Liri-Node-App}/{master}/{/images/start.png})
-![spotify-this-song](https://raw.github.com/{emma-eaton1}/{Liri-Node-App}/{master}/{/images/spot.png})
-![movie-this](https://raw.github.com/{emma-eaton1}/{Liri-Node-App}/{master}/{/images/movie.png})
-![do-what-it-says](https://raw.github.com/{emma-eaton1}/{Liri-Node-App}/{master}/{/images/random.png})
+*do-what-it-says* will use the text from random.txt to call one of LIRI's other commands.
+ 
+>![Loaded App](images/start.png)
+>![spotify-this-song](images/spot.png)
+>![movie-this](images/movie.png)
+>![do-what-it-says](images/random.png)
+
 > Uploaded by Emma Eaton, for Week 10 Homework
